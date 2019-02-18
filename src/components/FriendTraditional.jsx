@@ -25,12 +25,14 @@ export default class FriendTraditional extends React.Component {
 
     return (
       <div style={style}>
-        <h3>(traditional friend) {friend.name}</h3>
+        <h3>{friend.name}</h3>
 
         <div style={{ color: isOnline ? 'green' : 'red' }}>
           is {!isOnline && 'NOT '}online
           {isOnline && ' :)'}
         </div>
+
+        <span>(class component)</span>
       </div>
     );
   }
