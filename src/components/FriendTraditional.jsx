@@ -25,6 +25,7 @@ export default class FriendTraditional extends React.Component {
 
   componentDidMount() {
     this.setIsOnlineStatus();
+    document.addEventListener('dblclick', dbCallback);
   }
 
   componentDidUpdate(prevProps) {
@@ -36,6 +37,11 @@ export default class FriendTraditional extends React.Component {
   setIsOnlineStatus = () => {
     checkOnlineStatus(this.props.friend.id)
       .then(data => this.setState({ isOnline: data }));
+  }
+
+  componentWillUnmount() {
+    // cancels pending ajax calls !!!
+    document.removeEventListener('dblclick', dbCallback);
   }
 
   render() {

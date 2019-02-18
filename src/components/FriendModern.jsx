@@ -15,6 +15,11 @@ export default function FriendModern({ friend }) {
 
   const isOnline = useIsOnline(friend.id);
 
+  useEffect(() => {
+    document.addEventListener('dblclick', dbCallback);
+    return () => document.removeEventListener('dblclick', dbCallback);
+  }, []);
+
   return (
     <div style={style}>
       <h3>{friend.name}</h3>
