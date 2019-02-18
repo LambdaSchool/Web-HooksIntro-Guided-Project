@@ -37,7 +37,7 @@ export default class Container extends React.Component {
         <div>
           {
             this.state.selectedFriendId &&
-            <FriendModern
+            <FriendTraditional
               friend={this.getCurrentFriend()}
             />
           }
@@ -46,7 +46,7 @@ export default class Container extends React.Component {
         <div>
           {
             this.state.selectedFriendId &&
-            <FriendTraditional
+            <FriendModern
               friend={this.getCurrentFriend()}
             />
           }
