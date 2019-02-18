@@ -1,5 +1,6 @@
 import React from 'react';
-import { FriendModern, FriendTraditional } from './Friend';
+import FriendTraditional from './FriendTraditional';
+import FriendModern from './FriendModern';
 
 
 const friends = [

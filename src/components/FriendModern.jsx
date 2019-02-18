@@ -17,27 +17,7 @@ export function checkOnlineStatus(id) {
   });
 }
 
-export class FriendTraditional extends React.Component {
-  render() {
-    console.log('render function of Friend runs!');
-
-    const isOnline = false;
-    const { friend } = this.props;
-
-    return (
-      <div style={style}>
-        <h3>(traditional friend) {friend.name}</h3>
-
-        <div style={{ color: isOnline ? 'green' : 'red' }}>
-          is {!isOnline && 'NOT '}online
-          {isOnline && ' :)'}
-        </div>
-      </div>
-    );
-  }
-}
-
-export function FriendModern({ friend }) {
+export default function FriendModern({ friend }) {
   const isOnline = false;
 
   return (
