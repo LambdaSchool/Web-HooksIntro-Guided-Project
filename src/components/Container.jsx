@@ -28,7 +28,10 @@ export default class Container extends React.Component {
         {
           friends.map(friend => {
             return (
-              <button key={friend.id} onClick={() => this.selectFriend(friend.id)}>
+              <button
+                key={friend.id}
+                onClick={() => this.selectFriend(friend.id)}
+              >
                 {friend.name}
               </button>
             );
