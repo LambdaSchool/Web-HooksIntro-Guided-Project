@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PT from 'prop-types';
 
 const dbCallback = Function.prototype;
@@ -19,7 +19,11 @@ export function checkOnlineStatus(id) {
 }
 
 export default function FriendModern({ friend }) {
-  const isOnline = false;
+  const [isOnline, setIsOnline] = useState(null);
+  const onCheckIfOnline = () => {
+    checkOnlineStatus(friend.id)
+      .then(data => setIsOnline(data));
+  };
 
   return (
     <div style={style}>
@@ -31,6 +35,8 @@ export default function FriendModern({ friend }) {
       </div>
 
       <span>(functional component with hooks)</span>
+
+      <button onClick={onCheckIfOnline}>check if online</button>
     </div>
   );
 }
