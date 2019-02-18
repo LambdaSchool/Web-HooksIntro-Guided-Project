@@ -1,5 +1,8 @@
 import React from 'react';
 
+
+const dbCallback = Function.prototype;
+
 const style = {
   border: '1px solid black',
   padding: '10px',
@@ -8,8 +11,6 @@ const style = {
 
 // fake request to server
 export function checkOnlineStatus(id) {
-  console.log('starting online status check');
-
   return new Promise(resolve => {
     setTimeout(() => {
       resolve(id % 2 === 0);
@@ -19,8 +20,6 @@ export function checkOnlineStatus(id) {
 
 export default class FriendTraditional extends React.Component {
   render() {
-    console.log('render function of Friend runs!');
-
     const isOnline = false;
     const { friend } = this.props;
 

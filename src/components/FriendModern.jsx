@@ -1,5 +1,8 @@
 import React from 'react';
 
+
+const dbCallback = Function.prototype;
+
 const style = {
   border: '1px solid black',
   padding: '10px',
@@ -8,8 +11,6 @@ const style = {
 
 // fake request to server
 export function checkOnlineStatus(id) {
-  console.log('starting online status check');
-
   return new Promise(resolve => {
     setTimeout(() => {
       resolve(id % 2 === 0);
