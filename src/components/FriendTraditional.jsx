@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PT from 'prop-types';
 
 const dbCallback = Function.prototype;
 
@@ -37,3 +37,10 @@ export default class FriendTraditional extends React.Component {
     );
   }
 }
+
+FriendTraditional.propTypes = {
+  friend: PT.shape({
+    id: PT.number.isRequired,
+    name: PT.string.isRequired,
+  }).isRequired,
+};
