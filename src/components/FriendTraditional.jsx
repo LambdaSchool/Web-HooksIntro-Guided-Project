@@ -23,12 +23,23 @@ export default class FriendTraditional extends React.Component {
     isOnline: false,
   }
 
+  componentDidMount() {
+    this.setIsOnlineStatus();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.friend.id !== this.props.friend.id) {
+      this.setIsOnlineStatus();
+    }
+  }
+
   setIsOnlineStatus = () => {
     checkOnlineStatus(this.props.friend.id)
       .then(data => this.setState({ isOnline: data }));
   }
 
   render() {
+    console.log('traditional renders');
     const { friend } = this.props;
     const { isOnline } = this.state;
 
@@ -42,8 +53,6 @@ export default class FriendTraditional extends React.Component {
         </div>
 
         <span>(class component)</span>
-
-        <button onClick={this.setIsOnlineStatus}>check if online</button>
       </div>
     );
   }

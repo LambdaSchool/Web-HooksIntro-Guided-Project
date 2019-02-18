@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PT from 'prop-types';
+import { useIsOnline } from '../customEffects/useIsOnline';
 
 const dbCallback = Function.prototype;
 
@@ -9,21 +10,10 @@ const style = {
   margin: '10px',
 };
 
-// fetch online status from the server (fake lol)
-export function checkOnlineStatus(id) {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      resolve(id % 2 === 0);
-    }, 1000);
-  });
-}
-
 export default function FriendModern({ friend }) {
-  const [isOnline, setIsOnline] = useState(null);
-  const onCheckIfOnline = () => {
-    checkOnlineStatus(friend.id)
-      .then(data => setIsOnline(data));
-  };
+  console.log('modern renders');
+
+  const isOnline = useIsOnline(friend.id);
 
   return (
     <div style={style}>
@@ -35,8 +25,6 @@ export default function FriendModern({ friend }) {
       </div>
 
       <span>(functional component with hooks)</span>
-
-      <button onClick={onCheckIfOnline}>check if online</button>
     </div>
   );
 }
