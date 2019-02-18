@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import PT from 'prop-types';
 import { useIsOnline } from '../customEffects/useIsOnline';
 
