@@ -34,19 +34,23 @@ export default class Container extends React.Component {
             );
           })
         }
-        {
-          this.state.selectedFriendId &&
-          <FriendModern
-            friend={this.getCurrentFriend()}
-          />
-        }
+        <div>
+          {
+            this.state.selectedFriendId &&
+            <FriendModern
+              friend={this.getCurrentFriend()}
+            />
+          }
+        </div>
 
-        {
-          this.state.selectedFriendId &&
-          <FriendTraditional
-            friend={this.getCurrentFriend()}
-          />
-        }
+        <div>
+          {
+            this.state.selectedFriendId &&
+            <FriendTraditional
+              friend={this.getCurrentFriend()}
+            />
+          }
+        </div>
         <br />
       </div>
     );
