@@ -9,7 +9,7 @@ const style = {
   margin: '10px',
 };
 
-// fake request to server
+// fetch online status from the server (fake lol)
 export function checkOnlineStatus(id) {
   return new Promise(resolve => {
     setTimeout(() => {
