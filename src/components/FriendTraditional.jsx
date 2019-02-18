@@ -19,9 +19,13 @@ export function checkOnlineStatus(id) {
 }
 
 export default class FriendTraditional extends React.Component {
+  state = {
+    isOnline: false,
+  }
+
   render() {
-    const isOnline = false;
     const { friend } = this.props;
+    const { isOnline } = this.state;
 
     return (
       <div style={style}>
