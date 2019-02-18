@@ -5,7 +5,7 @@ import FriendModern from './FriendModern';
 
 const friends = [
   { id: 1, name: 'Luke' },
-  { id: 2, name: 'Josh' },
+  { id: 2, name: 'Orlando' },
   { id: 3, name: 'Tom' },
   { id: 4, name: 'Samar' },
 ];
